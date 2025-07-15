@@ -1,0 +1,279 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Horoscope & Articles - Kavach Jyotish Kendra{% endblock %}
+
+{% block content %}
+<section class="section" style="background: linear-gradient(to bottom right, rgba(107, 70, 193, 0.05), rgba(245, 158, 11, 0.05)); min-height: 80vh;">
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title text-gradient" data-translate="blog.title">Daily Horoscope & Articles</h1>
+            <p class="section-subtitle" data-translate="blog.subtitle">Stay connected with cosmic energies and spiritual wisdom</p>
+        </div>
+
+        <!-- Category Filter -->
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem;">
+            <button class="category-btn active" onclick="filterPosts('all')" style="padding: 8px 16px; border: 2px solid var(--spiritual-purple); border-radius: 6px; background-color: var(--spiritual-purple); color: white; cursor: pointer; font-weight: 600;">
+                All Articles
+            </button>
+            <button class="category-btn" onclick="filterPosts('Daily Horoscope')" style="padding: 8px 16px; border: 2px solid var(--spiritual-purple); border-radius: 6px; background-color: transparent; color: var(--spiritual-purple); cursor: pointer; font-weight: 600;">
+                Daily Horoscope
+            </button>
+            <button class="category-btn" onclick="filterPosts('Spiritual Wisdom')" style="padding: 8px 16px; border: 2px solid var(--spiritual-purple); border-radius: 6px; background-color: transparent; color: var(--spiritual-purple); cursor: pointer; font-weight: 600;">
+                Spiritual Wisdom
+            </button>
+            <button class="category-btn" onclick="filterPosts('Vastu Guidance')" style="padding: 8px 16px; border: 2px solid var(--spiritual-purple); border-radius: 6px; background-color: transparent; color: var(--spiritual-purple); cursor: pointer; font-weight: 600;">
+                Vastu Guidance
+            </button>
+            <button class="category-btn" onclick="filterPosts('Gemstone Therapy')" style="padding: 8px 16px; border: 2px solid var(--spiritual-purple); border-radius: 6px; background-color: transparent; color: var(--spiritual-purple); cursor: pointer; font-weight: 600;">
+                Gemstone Therapy
+            </button>
+            <button class="category-btn" onclick="filterPosts('Astrology Tips')" style="padding: 8px 16px; border: 2px solid var(--spiritual-purple); border-radius: 6px; background-color: transparent; color: var(--spiritual-purple); cursor: pointer; font-weight: 600;">
+                Astrology Tips
+            </button>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div id="blog-posts" class="grid grid-3">
+            {% if posts %}
+                {% for post in posts %}
+                <div class="card blog-post" data-category="{{ post.category }}" style="overflow: hidden; transition: transform 0.3s ease;">
+                    {% if post.image_url %}
+                    <img src="{{ post.image_url }}" alt="{{ post.title }}" style="width: 100%; height: 200px; object-fit: cover;">
+                    {% else %}
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--spiritual-purple), var(--saffron)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-star" style="font-size: 3rem; color: white; opacity: 0.7;"></i>
+                    </div>
+                    {% endif %}
+                    
+                    <div style="padding: 1.5rem;">
+                        <div style="display: inline-block; padding: 4px 8px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;">
+                            {{ post.category }}
+                        </div>
+                        
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem; line-height: 1.4;">
+                            {{ post.title }}
+                        </h3>
+                        
+                        <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            {{ post.excerpt }}
+                        </p>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--gray-500); font-size: 0.875rem;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                                {{ post.created_at.strftime('%B %d, %Y') if post.created_at else 'Recently' }}
+                            </div>
+                            <button onclick="readMore('{{ post.title }}', '{{ post.content }}')" style="background: none; border: none; color: var(--spiritual-purple); cursor: pointer; font-weight: 600; display: flex; align-items: center;">
+                                Read More <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default content when no posts available -->
+                <div class="card blog-post" data-category="Daily Horoscope">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--spiritual-purple), var(--saffron)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-star" style="font-size: 3rem; color: white; opacity: 0.7;"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <div style="display: inline-block; padding: 4px 8px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;">
+                            Daily Horoscope
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">
+                            Today's Cosmic Guidance
+                        </h3>
+                        <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.5;">
+                            Discover what the stars have in store for you today. Get personalized insights based on your zodiac sign and planetary movements.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--gray-500); font-size: 0.875rem;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                                Today
+                            </div>
+                            <a href="/book" style="color: var(--spiritual-purple); font-weight: 600; text-decoration: none; display: flex; align-items: center;">
+                                Get Reading <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card blog-post" data-category="Spiritual Wisdom">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--spiritual-purple), var(--saffron)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-om" style="font-size: 3rem; color: white; opacity: 0.7;"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <div style="display: inline-block; padding: 4px 8px; background-color: rgba(107, 70, 193, 0.1); color: var(--spiritual-purple); border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;">
+                            Spiritual Wisdom
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">
+                            Ancient Vedic Principles for Modern Life
+                        </h3>
+                        <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.5;">
+                            Learn how to apply timeless spiritual principles to navigate modern challenges and find inner peace in today's fast-paced world.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--gray-500); font-size: 0.875rem;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                                Recently
+                            </div>
+                            <a href="/book" style="color: var(--spiritual-purple); font-weight: 600; text-decoration: none; display: flex; align-items: center;">
+                                Learn More <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card blog-post" data-category="Vastu Guidance">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--spiritual-purple), var(--saffron)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-home" style="font-size: 3rem; color: white; opacity: 0.7;"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <div style="display: inline-block; padding: 4px 8px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;">
+                            Vastu Guidance
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">
+                            Creating Harmony in Your Living Space
+                        </h3>
+                        <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.5;">
+                            Discover simple Vastu tips to enhance positive energy flow in your home and workplace for prosperity and well-being.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--gray-500); font-size: 0.875rem;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                                This Week
+                            </div>
+                            <a href="/book" style="color: var(--spiritual-purple); font-weight: 600; text-decoration: none; display: flex; align-items: center;">
+                                Explore <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" style="display: none; text-align: center; padding: 4rem 2rem;">
+            <div class="card" style="max-width: 400px; margin: 0 auto;">
+                <i class="fas fa-search" style="font-size: 3rem; color: var(--gray-400); margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--spiritual-purple-deep); margin-bottom: 1rem;">No Articles Found</h3>
+                <p style="color: var(--gray-600); margin-bottom: 1.5rem;">
+                    No articles found in this category. Try selecting a different category or check back later for new content.
+                </p>
+                <button onclick="filterPosts('all')" class="btn btn-primary">
+                    View All Articles
+                </button>
+            </div>
+        </div>
+
+        <!-- Featured Daily Horoscope CTA -->
+        <div style="margin-top: 4rem;">
+            <div class="spiritual-gradient" style="padding: 3rem; border-radius: 16px; text-align: center; color: white;">
+                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Today's Cosmic Guidance</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Get personalized daily horoscope readings based on your birth chart. 
+                    Discover what the stars have in store for you today.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/book" class="btn" style="background-color: white; color: var(--spiritual-purple); padding: 16px 32px;">
+                        <i class="fas fa-clock" style="margin-right: 8px;"></i>
+                        Get Daily Horoscope
+                    </a>
+                    <a href="/book" class="btn btn-outline" style="border-color: white; color: white; padding: 16px 32px;">
+                        Book Personal Reading
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Article Modal -->
+<div id="articleModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; overflow-y: auto;">
+    <div style="background-color: white; margin: 2rem auto; max-width: 800px; border-radius: 12px; position: relative;">
+        <div style="padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 id="modalTitle" style="color: var(--spiritual-purple-deep); font-size: 1.5rem; font-weight: 600;"></h2>
+                <button onclick="closeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-500);">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="modalContent" style="color: var(--gray-700); line-height: 1.6; white-space: pre-line;"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Blog filtering functionality
+let currentFilter = 'all';
+
+function filterPosts(category) {
+    currentFilter = category;
+    const posts = document.querySelectorAll('.blog-post');
+    const emptyState = document.getElementById('empty-state');
+    let visiblePosts = 0;
+    
+    // Update active button
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.backgroundColor = 'transparent';
+        btn.style.color = 'var(--spiritual-purple)';
+    });
+    
+    event.target.classList.add('active');
+    event.target.style.backgroundColor = 'var(--spiritual-purple)';
+    event.target.style.color = 'white';
+    
+    // Filter posts
+    posts.forEach(post => {
+        const postCategory = post.dataset.category;
+        if (category === 'all' || postCategory === category) {
+            post.style.display = 'block';
+            visiblePosts++;
+        } else {
+            post.style.display = 'none';
+        }
+    });
+    
+    // Show empty state if no posts visible
+    if (visiblePosts === 0) {
+        emptyState.style.display = 'block';
+    } else {
+        emptyState.style.display = 'none';
+    }
+}
+
+// Article modal functionality
+function readMore(title, content) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalContent').textContent = content;
+    document.getElementById('articleModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('articleModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+document.getElementById('articleModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Hover effects for cards
+document.querySelectorAll('.blog-post').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px)';
+        this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+    });
+});
+</script>
+{% endblock %}

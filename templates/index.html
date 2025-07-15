@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+{% extends "base.html" %}
+
+{% block title %}Kavach Jyotish Kendra - Spiritual Guidance & Astrological Wisdom{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="yantra-pattern">
+                <i class="fas fa-star" style="font-size: 3rem; color: var(--saffron);"></i>
+            </div>
+            
+            <h1 data-translate="hero.title">Welcome to Kavach Jyotish Kendra</h1>
+            <p class="subtitle" data-translate="hero.subtitle">Discover Your Destiny Through Ancient Wisdom & Modern Insights</p>
+            <p class="description" data-translate="hero.description">Experience personalized astrological guidance, Kundli analysis, Vastu consultation, and spiritual healing from our certified Jyotish experts.</p>
+            
+            <div class="hero-buttons">
+                <a href="/book" class="btn btn-secondary">
+                    <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>
+                    <span data-translate="hero.cta1">Book a Consultation</span>
+                </a>
+                <a href="/blog" class="btn btn-outline" style="background-color: rgba(255,255,255,0.2); border-color: white; color: white;">
+                    <i class="fas fa-star" style="margin-right: 8px;"></i>
+                    <span data-translate="hero.cta2">Know Your Horoscope</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-clock stat-icon"></i>
+                <div class="stat-value">12+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users stat-icon"></i>
+                <div class="stat-value">10K+</div>
+                <div class="stat-label">Consultations</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-bullseye stat-icon"></i>
+                <div class="stat-value">5000+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-award stat-icon"></i>
+                <div class="stat-value">98%</div>
+                <div class="stat-label">Accuracy Rate</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview -->
+<section class="section" style="background: linear-gradient(to bottom right, rgba(107, 70, 193, 0.05), rgba(245, 158, 11, 0.05));">
+    <div class="container">
+        <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+            <div>
+                <img src="\images\jyotish.jpg"  
+                     alt="Jyotish Photo"    
+                     style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 10%;">
+            </div>
+            
+            <div>
+                <h2 class="text-gradient" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;" data-translate="about.title">About Kavach Jyotish Kendra</h2>
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--spiritual-purple-deep); margin-bottom: 0.5rem;">Pandit Rajesh Sharma</h3>
+                <p style="color: var(--gray-600); margin-bottom: 1.5rem;">Certified Jyotish Acharya & Spiritual Guide</p>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <p style="color: var(--gray-700); margin-bottom: 1rem;">
+                        With over 25 years of experience in Vedic astrology and spiritual sciences, 
+                        Pandit Rajesh Sharma has guided thousands of individuals towards clarity, 
+                        prosperity, and spiritual growth.
+                    </p>
+                    <p style="color: var(--gray-700);">
+                        Specializing in Kundli analysis, gemstone consultation, Vastu Shastra, 
+                        and spiritual healing, he combines traditional knowledge with practical modern solutions.
+                    </p>
+                </div>
+
+                <a href="/about" class="btn btn-primary">
+                    Learn More About Us
+                    <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Services -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title text-gradient" data-translate="services.title">Our Sacred Services</h2>
+            <p class="section-subtitle" data-translate="services.subtitle">Comprehensive spiritual and astrological guidance tailored to your unique journey</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="card-icon purple">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 data-translate="services.kundli.title">Kundli Analysis</h3>
+                <p data-translate="services.kundli.description">Complete birth chart analysis with detailed predictions and remedies for life's challenges.</p>
+                <div class="price" data-translate="services.kundli.price">₹1,500</div>
+                <a href="/book" class="btn btn-primary" style="width: 100%;">
+                    Book Now
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon saffron">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3 data-translate="services.gemstone.title">Gemstone Consultation</h3>
+                <p data-translate="services.gemstone.description">Personalized gemstone recommendations based on your planetary positions and needs.</p>
+                <div class="price" data-translate="services.gemstone.price">₹1,200</div>
+                <a href="/book" class="btn btn-primary" style="width: 100%;">
+                    Book Now
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon purple">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3 data-translate="services.vastu.title">Vastu Shastra</h3>
+                <p data-translate="services.vastu.description">Harmonize your living and working spaces with ancient architectural wisdom.</p>
+                <div class="price" data-translate="services.vastu.price">₹2,000</div>
+                <a href="/book" class="btn btn-primary" style="width: 100%;">
+                    Book Now
+                </a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="services.html" class="btn btn-outline">
+                View All Services
+                <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="spiritual-gradient" style="padding: 5rem 0;">
+    <div class="container">
+        <div style="text-align: center; color: white; max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Ready to Transform Your Life?
+            </h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.9;">
+                Take the first step towards spiritual clarity and life transformation with our expert guidance.
+            </p>
+            <div class="hero-buttons">
+                <a href="/book" class="btn" style="background-color: white; color: var(--spiritual-purple); padding: 16px 32px;">
+                    <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>
+                    Book Your Consultation
+                </a>
+                <a href="/contact" class="btn btn-outline" style="border-color: white; color: white; padding: 16px 32px;">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+{% endblock %}

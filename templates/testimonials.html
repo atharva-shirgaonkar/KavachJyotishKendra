@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+
+{% block title %}Testimonials - Kavach Jyotish Kendra{% endblock %}
+
+{% block content %}
+<section class="section" style="background: linear-gradient(to bottom right, rgba(107, 70, 193, 0.05), rgba(245, 158, 11, 0.05)); min-height: 80vh;">
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title text-gradient" data-translate="testimonials.title">What Our Clients Say</h1>
+            <p class="section-subtitle" data-translate="testimonials.subtitle">Real experiences from people whose lives have been transformed through our guidance</p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid grid-3">
+            {% if testimonials %}
+                {% for testimonial in testimonials %}
+                <div class="card" style="padding: 2rem; text-align: left;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0;">
+                            {{ testimonial.name[0].upper() }}{{ testimonial.name.split(' ')[1][0].upper() if testimonial.name.split(' ')|length > 1 else '' }}
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); font-size: 1.125rem; margin-bottom: 0.25rem;">
+                                {{ testimonial.name }}
+                            </h4>
+                            <div style="display: flex; align-items: center; color: var(--gray-600); font-size: 0.875rem;">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>
+                                {{ testimonial.location }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        {% for i in range(testimonial.rating) %}
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        {% endfor %}
+                        {% for i in range(5 - testimonial.rating) %}
+                        <i class="far fa-star" style="color: var(--gray-300); margin-right: 0.25rem;"></i>
+                        {% endfor %}
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: -8px; left: -8px; font-size: 1.5rem; color: var(--spiritual-purple); opacity: 0.2;"></i>
+                        <p style="color: var(--gray-700); font-style: italic; line-height: 1.6; padding-left: 1rem;">
+                            "{{ testimonial.text }}"
+                        </p>
+                    </div>
+
+                    <div style="display: inline-block; padding: 4px 12px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 20px; font-size: 0.875rem; font-weight: 500;">
+                        {{ testimonial.service }}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default testimonials when none exist -->
+                <div class="card" style="padding: 2rem; text-align: left;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0;">
+                            AP
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); font-size: 1.125rem; margin-bottom: 0.25rem;">
+                                Anita Patel
+                            </h4>
+                            <div style="display: flex; align-items: center; color: var(--gray-600); font-size: 0.875rem;">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>
+                                Mumbai, Maharashtra
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: -8px; left: -8px; font-size: 1.5rem; color: var(--spiritual-purple); opacity: 0.2;"></i>
+                        <p style="color: var(--gray-700); font-style: italic; line-height: 1.6; padding-left: 1rem;">
+                            Pandit Rajesh Sharma's Kundli analysis was incredibly accurate and helpful. His guidance helped me make important life decisions with confidence. The remedies he suggested have brought positive changes to my life.
+                        </p>
+                    </div>
+
+                    <div style="display: inline-block; padding: 4px 12px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 20px; font-size: 0.875rem; font-weight: 500;">
+                        Kundli Analysis
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 2rem; text-align: left;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0;">
+                            RS
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); font-size: 1.125rem; margin-bottom: 0.25rem;">
+                                Raj Shah
+                            </h4>
+                            <div style="display: flex; align-items: center; color: var(--gray-600); font-size: 0.875rem;">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>
+                                Pune, Maharashtra
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: -8px; left: -8px; font-size: 1.5rem; color: var(--spiritual-purple); opacity: 0.2;"></i>
+                        <p style="color: var(--gray-700); font-style: italic; line-height: 1.6; padding-left: 1rem;">
+                            The Vastu consultation for my office was excellent. After implementing the suggested changes, I noticed significant improvement in my business and overall work environment. Highly recommended!
+                        </p>
+                    </div>
+
+                    <div style="display: inline-block; padding: 4px 12px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 20px; font-size: 0.875rem; font-weight: 500;">
+                        Vastu Shastra
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 2rem; text-align: left;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0;">
+                            PS
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); font-size: 1.125rem; margin-bottom: 0.25rem;">
+                                Priya Sharma
+                            </h4>
+                            <div style="display: flex; align-items: center; color: var(--gray-600); font-size: 0.875rem;">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>
+                                Delhi, India
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: -8px; left: -8px; font-size: 1.5rem; color: var(--spiritual-purple); opacity: 0.2;"></i>
+                        <p style="color: var(--gray-700); font-style: italic; line-height: 1.6; padding-left: 1rem;">
+                            The gemstone consultation was life-changing. The recommended Ruby has brought positive energy and improved my confidence. Pandit ji's knowledge and guidance are truly exceptional.
+                        </p>
+                    </div>
+
+                    <div style="display: inline-block; padding: 4px 12px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 20px; font-size: 0.875rem; font-weight: 500;">
+                        Gemstone Consultation
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 2rem; text-align: left;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0;">
+                            VM
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); font-size: 1.125rem; margin-bottom: 0.25rem;">
+                                Vikram Mehta
+                            </h4>
+                            <div style="display: flex; align-items: center; color: var(--gray-600); font-size: 0.875rem;">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>
+                                Bangalore, Karnataka
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: -8px; left: -8px; font-size: 1.5rem; color: var(--spiritual-purple); opacity: 0.2;"></i>
+                        <p style="color: var(--gray-700); font-style: italic; line-height: 1.6; padding-left: 1rem;">
+                            The marriage compatibility analysis was thorough and insightful. It helped us understand each other better and prepared us for a harmonious married life. Thank you for your guidance!
+                        </p>
+                    </div>
+
+                    <div style="display: inline-block; padding: 4px 12px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 20px; font-size: 0.875rem; font-weight: 500;">
+                        Marriage Matching
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 2rem; text-align: left;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0;">
+                            SK
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); font-size: 1.125rem; margin-bottom: 0.25rem;">
+                                Sunita Kapoor
+                            </h4>
+                            <div style="display: flex; align-items: center; color: var(--gray-600); font-size: 0.875rem;">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>
+                                Jaipur, Rajasthan
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: -8px; left: -8px; font-size: 1.5rem; color: var(--spiritual-purple); opacity: 0.2;"></i>
+                        <p style="color: var(--gray-700); font-style: italic; line-height: 1.6; padding-left: 1rem;">
+                            The spiritual protection kavach and mantras have brought peace and prosperity to my family. We feel more secure and blessed. Pandit ji's spiritual guidance is truly divine.
+                        </p>
+                    </div>
+
+                    <div style="display: inline-block; padding: 4px 12px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 20px; font-size: 0.875rem; font-weight: 500;">
+                        Kavach & Protection
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 2rem; text-align: left;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0;">
+                            AM
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); font-size: 1.125rem; margin-bottom: 0.25rem;">
+                                Arjun Malhotra
+                            </h4>
+                            <div style="display: flex; align-items: center; color: var(--gray-600); font-size: 0.875rem;">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; font-size: 0.75rem;"></i>
+                                Chennai, Tamil Nadu
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                        <i class="fas fa-star" style="color: var(--saffron); margin-right: 0.25rem;"></i>
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <i class="fas fa-quote-left" style="position: absolute; top: -8px; left: -8px; font-size: 1.5rem; color: var(--spiritual-purple); opacity: 0.2;"></i>
+                        <p style="color: var(--gray-700); font-style: italic; line-height: 1.6; padding-left: 1rem;">
+                            The daily horoscope readings are incredibly accurate and helpful for planning my day. The personalized insights have helped me make better decisions and avoid potential challenges.
+                        </p>
+                    </div>
+
+                    <div style="display: inline-block; padding: 4px 12px; background-color: rgba(245, 158, 11, 0.1); color: var(--saffron); border-radius: 20px; font-size: 0.875rem; font-weight: 500;">
+                        Daily Horoscope
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Submit Testimonial Section -->
+        <div style="margin-top: 4rem;">
+            <div class="card" style="padding: 3rem; text-align: center;">
+                <h2 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 1rem;">
+                    Share Your Experience
+                </h2>
+                <p style="color: var(--gray-600); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Have you experienced the transformative power of our spiritual guidance? 
+                    We'd love to hear about your journey and how it has impacted your life.
+                </p>
+                
+                <form id="testimonialForm" style="max-width: 600px; margin: 0 auto; text-align: left;">
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location" class="form-label">Location *</label>
+                            <input type="text" id="location" name="location" class="form-input" placeholder="City, State" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Received *</label>
+                            <select id="service" name="service" class="form-select" required>
+                                <option value="">Select service</option>
+                                <option value="Kundli Analysis">Kundli Analysis</option>
+                                <option value="Gemstone Consultation">Gemstone Consultation</option>
+                                <option value="Vastu Shastra">Vastu Shastra</option>
+                                <option value="Kavach & Protection">Kavach & Protection</option>
+                                <option value="Daily Horoscope">Daily Horoscope</option>
+                                <option value="Marriage Matching">Marriage Matching</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="rating" class="form-label">Rating *</label>
+                            <select id="rating" name="rating" class="form-select" required>
+                                <option value="">Select rating</option>
+                                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                                <option value="4">⭐⭐⭐⭐ Very Good</option>
+                                <option value="3">⭐⭐⭐ Good</option>
+                                <option value="2">⭐⭐ Fair</option>
+                                <option value="1">⭐ Poor</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="text" class="form-label">Your Experience *</label>
+                        <textarea id="text" name="text" class="form-textarea" rows="4" 
+                                  placeholder="Share your experience and how our guidance helped you..." required></textarea>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="padding: 12px 32px;">
+                            <i class="fas fa-heart" style="margin-right: 8px;"></i>
+                            Submit Testimonial
+                        </button>
+                        <p style="font-size: 0.875rem; color: var(--gray-500); margin-top: 1rem;">
+                            Your testimonial will be reviewed before being published.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="margin-top: 4rem;">
+            <div class="spiritual-gradient" style="padding: 3rem; border-radius: 16px; text-align: center; color: white;">
+                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Ready to Transform Your Life?</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Join thousands of satisfied clients who have found clarity, prosperity, and spiritual growth through our authentic guidance.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/book" class="btn" style="background-color: white; color: var(--spiritual-purple); padding: 16px 32px;">
+                        <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>
+                        Book Your Consultation
+                    </a>
+                    <a href="/contact" class="btn btn-outline" style="border-color: white; color: white; padding: 16px 32px;">
+                        Have Questions? Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Testimonial form submission
+document.getElementById('testimonialForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitForm('testimonialForm', '/api/testimonials');
+});
+</script>
+{% endblock %}

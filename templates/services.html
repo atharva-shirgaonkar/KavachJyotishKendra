@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+{% extends "base.html" %}
+
+{% block title %}Our Services - Kavach Jyotish Kendra{% endblock %}
+
+{% block content %}
+<section class="section" style="background: linear-gradient(to bottom right, rgba(107, 70, 193, 0.05), rgba(245, 158, 11, 0.05)); min-height: 80vh;">
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title text-gradient" data-translate="services.title">Our Sacred Services</h1>
+            <p class="section-subtitle" data-translate="services.subtitle">Comprehensive spiritual and astrological guidance tailored to your unique journey</p>
+        </div>
+
+        <div class="grid grid-2" style="gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            <!-- Kundli Analysis -->
+            <div class="card" style="padding: 2rem;">
+                <div style="display: flex; align-items: start; gap: 1.5rem;">
+                    <div style="width: 64px; height: 64px; background-color: rgba(107, 70, 193, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-star" style="font-size: 2rem; color: var(--spiritual-purple);"></i>
+                    </div>
+                    
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep);" data-translate="services.kundli.title">
+                                Kundli Analysis
+                            </h3>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--saffron);" data-translate="services.kundli.price">
+                                ₹1,500
+                            </div>
+                        </div>
+                        
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;" data-translate="services.kundli.description">
+                            Complete birth chart analysis with detailed predictions and remedies for life's challenges.
+                        </p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">What's Included:</h4>
+                            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Complete birth chart analysis
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Detailed life predictions
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Career and marriage guidance
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Health and wealth insights
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Remedial measures
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="/book" class="btn btn-primary" style="width: 100%;">
+                            Book This Service
+                            <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gemstone Consultation -->
+            <div class="card" style="padding: 2rem;">
+                <div style="display: flex; align-items: start; gap: 1.5rem;">
+                    <div style="width: 64px; height: 64px; background-color: rgba(245, 158, 11, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-gem" style="font-size: 2rem; color: var(--saffron);"></i>
+                    </div>
+                    
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep);" data-translate="services.gemstone.title">
+                                Gemstone Consultation
+                            </h3>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--saffron);" data-translate="services.gemstone.price">
+                                ₹1,200
+                            </div>
+                        </div>
+                        
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;" data-translate="services.gemstone.description">
+                            Personalized gemstone recommendations based on your planetary positions and needs.
+                        </p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">What's Included:</h4>
+                            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Personalized gemstone selection
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Planetary strength analysis
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Wearing guidelines
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Alternative remedies
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Quality certification guidance
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="/book" class="btn btn-primary" style="width: 100%;">
+                            Book This Service
+                            <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vastu Shastra -->
+            <div class="card" style="padding: 2rem;">
+                <div style="display: flex; align-items: start; gap: 1.5rem;">
+                    <div style="width: 64px; height: 64px; background-color: rgba(107, 70, 193, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-home" style="font-size: 2rem; color: var(--spiritual-purple);"></i>
+                    </div>
+                    
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep);" data-translate="services.vastu.title">
+                                Vastu Shastra
+                            </h3>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--saffron);" data-translate="services.vastu.price">
+                                ₹2,000
+                            </div>
+                        </div>
+                        
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;" data-translate="services.vastu.description">
+                            Harmonize your living and working spaces with ancient architectural wisdom.
+                        </p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">What's Included:</h4>
+                            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Complete property analysis
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Room-wise recommendations
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Color and direction guidance
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Business Vastu consultation
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Remedial solutions
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="/book" class="btn btn-primary" style="width: 100%;">
+                            Book This Service
+                            <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kavach & Protection -->
+            <div class="card" style="padding: 2rem;">
+                <div style="display: flex; align-items: start; gap: 1.5rem;">
+                    <div style="width: 64px; height: 64px; background-color: rgba(245, 158, 11, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--saffron);"></i>
+                    </div>
+                    
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep);" data-translate="services.kavach.title">
+                                Kavach & Protection
+                            </h3>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--saffron);" data-translate="services.kavach.price">
+                                ₹800
+                            </div>
+                        </div>
+                        
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;" data-translate="services.kavach.description">
+                            Sacred protective amulets and mantras for spiritual protection and prosperity.
+                        </p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">What's Included:</h4>
+                            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Protective mantras
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Sacred amulets
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Spiritual cleansing
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Energy balancing
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Regular guidance
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="/book" class="btn btn-primary" style="width: 100%;">
+                            Book This Service
+                            <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Horoscope -->
+            <div class="card" style="padding: 2rem;">
+                <div style="display: flex; align-items: start; gap: 1.5rem;">
+                    <div style="width: 64px; height: 64px; background-color: rgba(107, 70, 193, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-calendar-alt" style="font-size: 2rem; color: var(--spiritual-purple);"></i>
+                    </div>
+                    
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep);" data-translate="services.horoscope.title">
+                                Daily Horoscope
+                            </h3>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--saffron);" data-translate="services.horoscope.price">
+                                ₹500
+                            </div>
+                        </div>
+                        
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;" data-translate="services.horoscope.description">
+                            Personalized daily, weekly, and monthly horoscope readings and guidance.
+                        </p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">What's Included:</h4>
+                            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Daily predictions
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Weekly forecasts
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Monthly guidance
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Planetary transit effects
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Lucky dates and times
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="/book" class="btn btn-primary" style="width: 100%;">
+                            Book This Service
+                            <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marriage Matching -->
+            <div class="card" style="padding: 2rem;">
+                <div style="display: flex; align-items: start; gap: 1.5rem;">
+                    <div style="width: 64px; height: 64px; background-color: rgba(245, 158, 11, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-heart" style="font-size: 2rem; color: var(--saffron);"></i>
+                    </div>
+                    
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep);" data-translate="services.matchmaking.title">
+                                Marriage Matching
+                            </h3>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--saffron);" data-translate="services.matchmaking.price">
+                                ₹1,800
+                            </div>
+                        </div>
+                        
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;" data-translate="services.matchmaking.description">
+                            Comprehensive compatibility analysis for harmonious relationships and marriages.
+                        </p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.75rem;">What's Included:</h4>
+                            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Complete compatibility analysis
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Guna Milan scoring
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Doshas and remedies
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Marriage timing
+                                </li>
+                                <li style="display: flex; align-items: center; color: var(--gray-600);">
+                                    <div style="width: 6px; height: 6px; background-color: var(--saffron); border-radius: 50%; margin-right: 0.75rem; flex-shrink: 0;"></div>
+                                    Relationship counseling
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="/book" class="btn btn-primary" style="width: 100%;">
+                            Book This Service
+                            <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consultation Process -->
+        <div style="margin-top: 4rem;">
+            <div class="card">
+                <h2 style="text-align: center; font-size: 2rem; font-weight: 700; color: var(--spiritual-purple-deep); margin-bottom: 3rem;">
+                    Our Consultation Process
+                </h2>
+                
+                <div class="grid grid-4">
+                    <div style="text-align: center;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: 700; font-size: 1.25rem;">
+                            1
+                        </div>
+                        <h3 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.5rem;">Book Appointment</h3>
+                        <p style="color: var(--gray-600); font-size: 0.875rem;">
+                            Choose your preferred service and schedule a convenient time
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="width: 64px; height: 64px; background-color: var(--saffron); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: 700; font-size: 1.25rem;">
+                            2
+                        </div>
+                        <h3 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.5rem;">Consultation</h3>
+                        <p style="color: var(--gray-600); font-size: 0.875rem;">
+                            Detailed discussion about your concerns and birth chart analysis
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="width: 64px; height: 64px; background-color: var(--spiritual-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: 700; font-size: 1.25rem;">
+                            3
+                        </div>
+                        <h3 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.5rem;">Analysis</h3>
+                        <p style="color: var(--gray-600); font-size: 0.875rem;">
+                            Comprehensive study using traditional methods and modern insights
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="width: 64px; height: 64px; background-color: var(--saffron); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: 700; font-size: 1.25rem;">
+                            4
+                        </div>
+                        <h3 style="font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 0.5rem;">Guidance</h3>
+                        <p style="color: var(--gray-600); font-size: 0.875rem;">
+                            Personalized recommendations and ongoing support
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align: center; margin-top: 4rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; color: var(--spiritual-purple-deep); margin-bottom: 1.5rem;">
+                Ready to Begin Your Spiritual Journey?
+            </h2>
+            <p style="font-size: 1.25rem; color: var(--gray-600); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Experience the transformative power of authentic Vedic guidance. 
+                Book your consultation today and take the first step towards clarity and prosperity.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/book" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.125rem;">
+                    <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>
+                    Book Consultation Now
+                </a>
+                <a href="/contact" class="btn btn-outline" style="padding: 16px 32px; font-size: 1.125rem;">
+                    Have Questions? Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+{% endblock %}

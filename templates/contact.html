@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Kavach Jyotish Kendra{% endblock %}
+
+{% block content %}
+<section class="section" style="background: linear-gradient(to bottom right, rgba(107, 70, 193, 0.05), rgba(245, 158, 11, 0.05)); min-height: 80vh;">
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title text-gradient" data-translate="contact.title">Get in Touch</h1>
+            <p class="section-subtitle" data-translate="contact.subtitle">Ready to begin your spiritual journey? We're here to guide you every step of the way.</p>
+        </div>
+
+        <div class="grid grid-2" style="gap: 4rem; max-width: 1200px; margin: 0 auto;">
+            <!-- Contact Information -->
+            <div>
+                <h2 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 2rem;" data-translate="contact.info.title">
+                    Contact Information
+                </h2>
+                
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <!-- Address -->
+                    <div style="display: flex; align-items: start; gap: 1rem;">
+                        <div style="width: 48px; height: 48px; background-color: var(--spiritual-purple); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;" data-translate="contact.address.label">Address</h3>
+                            <div style="color: var(--gray-600); white-space: pre-line;" data-translate="contact.address.value">
+                                123 Spiritual Lane, Ganesh Nagar
+                                Pune, Maharashtra 411014
+                                India
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div style="display: flex; align-items: start; gap: 1rem;">
+                        <div style="width: 48px; height: 48px; background-color: var(--saffron); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-phone" style="color: white;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;" data-translate="contact.phone.label">Phone</h3>
+                            <div style="color: var(--gray-600);">
+                                <div>+91 98765 43210</div>
+                                <div>+91 87654 32109</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div style="display: flex; align-items: start; gap: 1rem;">
+                        <div style="width: 48px; height: 48px; background-color: var(--spiritual-purple); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-envelope" style="color: white;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;" data-translate="contact.email.label">Email</h3>
+                            <div style="color: var(--gray-600);">
+                                <div>info@kavachjyotish.com</div>
+                                <div>consultation@kavachjyotish.com</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div style="display: flex; align-items: start; gap: 1rem;">
+                        <div style="width: 48px; height: 48px; background-color: #25D366; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fab fa-whatsapp" style="color: white;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem;" data-translate="contact.whatsapp.label">WhatsApp</h3>
+                            <div style="color: var(--gray-600); margin-bottom: 0.5rem;">+91 98765 43210</div>
+                            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" 
+                               style="display: inline-block; background-color: #25D366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                                <span data-translate="contact.whatsapp.chat">Chat Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consultation Hours -->
+                <div style="margin-top: 3rem; padding: 1.5rem; background-color: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <i class="fas fa-clock" style="color: var(--spiritual-purple); margin-right: 0.5rem;"></i>
+                        <h3 style="font-weight: 600; color: var(--gray-900);" data-translate="contact.hours.label">Consultation Hours</h3>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; color: var(--gray-600);">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Monday - Friday:</span>
+                            <span style="font-weight: 500;">9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Saturday:</span>
+                            <span style="font-weight: 500;">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Sunday:</span>
+                            <span style="font-weight: 500;">10:00 AM - 4:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="card" style="padding: 2.5rem;">
+                <h2 style="font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 2rem;" data-translate="contact.form.title">
+                    Send us a Message
+                </h2>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label" data-translate="contact.form.nameLabel">Your Name *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            class="form-input" 
+                            placeholder="Enter your name"
+                            data-translate="contact.form.namePlaceholder"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label" data-translate="contact.form.emailLabel">Email Address *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="your.email@example.com"
+                            data-translate="contact.form.emailPlaceholder"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label" data-translate="contact.form.subjectLabel">Subject</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            class="form-input" 
+                            placeholder="What can we help you with?"
+                            data-translate="contact.form.subjectPlaceholder"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label" data-translate="contact.form.messageLabel">Message *</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            class="form-textarea" 
+                            rows="5"
+                            placeholder="Tell us about your needs or questions..."
+                            data-translate="contact.form.messagePlaceholder"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.125rem;">
+                        <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                        <span data-translate="contact.form.submit">Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Google Map Section -->
+        <div style="margin-top: 4rem;">
+            <h2 style="text-align: center; font-size: 1.5rem; font-weight: 600; color: var(--spiritual-purple-deep); margin-bottom: 2rem;" data-translate="contact.map.title">
+                Find Us
+            </h2>
+            <div class="card" style="padding: 1rem;">
+                <div style="height: 400px; background-color: var(--gray-200); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <div style="text-align: center; color: var(--gray-600);">
+                        <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: var(--spiritual-purple); margin-bottom: 1rem;"></i>
+                        <p style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;" data-translate="contact.map.placeholder">
+                            Google Map will be embedded here
+                        </p>
+                        <p style="font-size: 0.875rem;" data-translate="contact.map.address">
+                            123 Spiritual Lane, Pune, Maharashtra
+                        </p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://maps.google.com/?q=Pune,Maharashtra,India" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="btn btn-primary" 
+                               style="padding: 8px 16px; font-size: 0.875rem;">
+                                Open in Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

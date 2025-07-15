@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(45, 33%, 97%);
+  --foreground: hsl(260, 29%, 16%);
+  --muted: hsl(45, 15%, 93%);
+  --muted-foreground: hsl(260, 8%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(260, 29%, 16%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(260, 29%, 16%);
+  --border: hsl(45, 15%, 88%);
+  --input: hsl(45, 15%, 88%);
+  --primary: hsl(260, 55%, 48%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(45, 15%, 93%);
+  --secondary-foreground: hsl(260, 29%, 16%);
+  --accent: hsl(35, 91%, 48%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(60, 9%, 98%);
+  --ring: hsl(260, 29%, 16%);
+  --radius: 0.5rem;
+  
+  /* Spiritual color variables */
+  --spiritual-purple: hsl(260, 55%, 48%);
+  --spiritual-purple-deep: hsl(260, 45%, 38%);
+  --saffron: hsl(35, 91%, 48%);
+  --saffron-dark: hsl(35, 81%, 38%);
+  --cream: hsl(45, 60%, 96%);
+  --gold: hsl(45, 93%, 47%);
+}
+
+.dark {
+  --background: hsl(260, 20%, 8%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(260, 15%, 15%);
+  --muted-foreground: hsl(260, 5%, 65%);
+  --popover: hsl(260, 20%, 8%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(260, 20%, 8%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(260, 15%, 15%);
+  --input: hsl(260, 15%, 15%);
+  --primary: hsl(260, 55%, 58%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(260, 15%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(35, 91%, 58%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(260, 45%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .yantra-pattern {
+    background-image: radial-gradient(circle at 50% 50%, hsl(45, 93%, 47%, 0.1) 0%, transparent 50%);
+  }
+  
+  .spiritual-gradient {
+    background: linear-gradient(135deg, hsl(260, 55%, 48%) 0%, hsl(260, 45%, 38%) 50%, hsl(35, 81%, 38%) 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(260, 55%, 48%), hsl(35, 81%, 38%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-spiritual-purple {
+    background-color: var(--spiritual-purple);
+  }
+
+  .bg-spiritual-purple-deep {
+    background-color: var(--spiritual-purple-deep);
+  }
+
+  .bg-saffron {
+    background-color: var(--saffron);
+  }
+
+  .bg-saffron-dark {
+    background-color: var(--saffron-dark);
+  }
+
+  .bg-cream {
+    background-color: var(--cream);
+  }
+
+  .text-spiritual-purple {
+    color: var(--spiritual-purple);
+  }
+
+  .text-spiritual-purple-deep {
+    color: var(--spiritual-purple-deep);
+  }
+
+  .text-saffron {
+    color: var(--saffron);
+  }
+
+  .text-gold {
+    color: var(--gold);
+  }
+
+  .border-spiritual-purple {
+    border-color: var(--spiritual-purple);
+  }
+
+  .hover\:bg-spiritual-purple:hover {
+    background-color: var(--spiritual-purple);
+  }
+
+  .hover\:bg-spiritual-purple-deep:hover {
+    background-color: var(--spiritual-purple-deep);
+  }
+
+  .hover\:bg-saffron-dark:hover {
+    background-color: var(--saffron-dark);
+  }
+
+  .hover\:text-spiritual-purple:hover {
+    color: var(--spiritual-purple);
+  }
+
+  .hover\:text-spiritual-purple-deep:hover {
+    color: var(--spiritual-purple-deep);
+  }
+
+  .focus\:ring-spiritual-purple:focus {
+    --tw-ring-color: var(--spiritual-purple);
+  }
+}
