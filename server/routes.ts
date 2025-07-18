@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { setupAuth, isAuthenticated } from "./replitAuth";
+import { isAuthenticated } from "./localAuth";
 import { 
   insertAppointmentSchema, 
   insertContactMessageSchema, 
@@ -12,7 +12,7 @@ import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
-  await setupAuth(app);
+  // await setupAuth(app); // This line is removed as per the edit hint.
 
   // Auth routes
   app.get('/api/auth/user', isAuthenticated, async (req: any, res) => {

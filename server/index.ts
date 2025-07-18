@@ -1,6 +1,14 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { setupLocalAuth } from "./localAuth";
+import path from "path";
+import { isAuthenticated } from "./localAuth";
+import { fileURLToPath } from "url";
+
+// Fix for __dirname in ES modules:
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
@@ -36,7 +44,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static(path.join(__dirname, '../templates')));
+
+app.get('/admin_dashboard', isAuthenticated, (req, res) => {
+  res.sendFile(path.join(__dirname, '../templates/admin_dashboard.html'));
+});
+
 (async () => {
+  setupLocalAuth(app);
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - Kavach Jyotish Kendra</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="/static/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,14 +19,9 @@
                 <p style="color: var(--gray-600);">Access the dashboard</p>
             </div>
 
-            {% if error %}
-            <div class="alert alert-error">
-                <i class="fas fa-exclamation-circle"></i>
-                {{ error }}
-            </div>
-            {% endif %}
+            <!-- You can show error messages here with JS if needed -->
 
-            <form method="POST">
+            <form id="adminLoginForm">
                 <div class="form-group">
                     <label for="username" class="form-label">Username</label>
                     <input 
@@ -64,7 +59,7 @@
 
             <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
                 <p style="color: var(--gray-500); font-size: 0.875rem;">
-                    Default credentials: admin / admin123
+                    Default credentials: admin / password
                 </p>
             </div>
         </div>

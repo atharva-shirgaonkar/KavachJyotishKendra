@@ -153,6 +153,36 @@ document.addEventListener('DOMContentLoaded', function() {
             submitForm('testimonialForm', '/api/testimonials');
         });
     }
+
+    // Admin Login Form AJAX handler
+    const adminLoginForm = document.getElementById('adminLoginForm');
+    if (adminLoginForm) {
+        adminLoginForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const username = adminLoginForm.username.value;
+            const password = adminLoginForm.password.value;
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include', // important for session cookies
+                    body: JSON.stringify({ username, password })
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    // Redirect to admin dashboard or show success
+                    window.location.href = '/admin_dashboard'; // Change this to your actual admin dashboard URL if different
+                } else {
+                    showAlert(result.message || 'Login failed', 'error');
+                }
+            } catch (err) {
+                showAlert('Network error. Please try again.', 'error');
+            }
+        });
+    }
 });
 
 // Smooth Scrolling for anchor links
