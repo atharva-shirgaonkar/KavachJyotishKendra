@@ -105,8 +105,7 @@ const resources = {
         },
         phone: {
           label: "Phone",
-          value: "+91 98765 43210",
-          value2: "+91 87654 32109"
+          value: "+91 75070 25656"
         },
         email: {
           label: "Email",
@@ -115,7 +114,7 @@ const resources = {
         },
         whatsapp: {
           label: "WhatsApp",
-          value: "+91 98765 43210",
+          value: "+91 75070 25656",
           chat: "Chat Now"
         },
         hours: {
@@ -288,8 +287,7 @@ const resources = {
         },
         phone: {
           label: "फोन",
-          value: "+91 98765 43210",
-          value2: "+91 87654 32109"
+          value: "+91 75070 25656"
         },
         email: {
           label: "ईमेल",
@@ -298,7 +296,7 @@ const resources = {
         },
         whatsapp: {
           label: "व्हाट्सऐप",
-          value: "+91 98765 43210",
+          value: "+91 75070 25656",
           chat: "अभी चैट करें"
         },
         hours: {
@@ -471,8 +469,7 @@ const resources = {
         },
         phone: {
           label: "फोन",
-          value: "+91 98765 43210",
-          value2: "+91 87654 32109"
+          value: "+91 75070 25656"
         },
         email: {
           label: "ईमेल",
@@ -481,7 +478,7 @@ const resources = {
         },
         whatsapp: {
           label: "व्हाट्सअॅप",
-          value: "+91 98765 43210",
+          value: "+91 75070 25656",
           chat: "आता चॅट करा"
         },
         hours: {

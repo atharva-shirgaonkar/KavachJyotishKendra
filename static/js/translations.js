@@ -93,21 +93,20 @@ const translations = {
                 label: "Address",
                 value: "123 Spiritual Lane, Ganesh Nagar\nPune, Maharashtra 411014\nIndia"
             },
-            phone: {
-                label: "Phone",
-                value: "+91 98765 43210",
-                value2: "+91 87654 32109"
-            },
+                    phone: {
+          label: "Phone",
+          value: "+91 75070 25656"
+        },
             email: {
                 label: "Email",
                 value: "info@kavachjyotish.com",
                 value2: "consultation@kavachjyotish.com"
             },
-            whatsapp: {
-                label: "WhatsApp",
-                value: "+91 98765 43210",
-                chat: "Chat Now"
-            },
+                    whatsapp: {
+          label: "WhatsApp",
+          value: "+91 75070 25656",
+          chat: "Chat Now"
+        },
             hours: {
                 label: "Consultation Hours",
                 weekdays: "Monday - Friday: 9:00 AM - 7:00 PM",

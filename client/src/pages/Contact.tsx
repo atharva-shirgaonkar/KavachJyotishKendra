@@ -86,7 +86,7 @@ export default function Contact() {
     {
       icon: Phone,
       label: t('contact.phone.label'),
-      value: "+91 98765 43210\n+91 87654 32109",
+      value: "+91 75070 25656",
       color: 'saffron'
     },
     {
@@ -98,11 +98,11 @@ export default function Contact() {
     {
       icon: MessageCircle,
       label: t('contact.whatsapp.label'),
-      value: "+91 98765 43210",
+      value: "+91 75070 25656",
       color: 'green-500',
       action: { 
         text: t('contact.whatsapp.chat'), 
-        href: "https://wa.me/919876543210" 
+        href: "https://wa.me/917507025656" 
       }
     }
   ];
