@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
@@ -12,7 +13,9 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
+
+setupLocalAuth(app);
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -44,14 +47,18 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, '../templates')));
+app.use("/static", express.static(path.join(__dirname, '../static')));
+
+// Serve admin login page
+app.get('/admin_login', (req, res) => {
+  res.sendFile(path.join(__dirname, '../templates/admin_login.html'));
+});
 
 app.get('/admin_dashboard', isAuthenticated, (req, res) => {
   res.sendFile(path.join(__dirname, '../templates/admin_dashboard.html'));
 });
 
 (async () => {
-  setupLocalAuth(app);
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -71,13 +78,11 @@ app.get('/admin_dashboard', isAuthenticated, (req, res) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
+  // Use Railway's PORT environment variable or default to 5000
+  const port = process.env.PORT || 5000;
   server.listen({
     port,
-    host: "localhost",
+    host: "0.0.0.0", // Allow external connections
   }, () => {
     log(`serving on port ${port}`);
   });

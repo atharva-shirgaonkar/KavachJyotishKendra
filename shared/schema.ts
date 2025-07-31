@@ -96,6 +96,7 @@ export const insertAppointmentSchema = createInsertSchema(appointments).omit({
 
 export const insertContactMessageSchema = createInsertSchema(contactMessages).omit({
   id: true,
+  isRead: true,
   createdAt: true,
 });
 

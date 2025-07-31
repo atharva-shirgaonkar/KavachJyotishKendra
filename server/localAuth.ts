@@ -8,8 +8,8 @@ declare module "express-session" {
   }
 }
 
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "password";
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "neelgriveshirgaonkar";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "shir12!/@neel";
 
 export function setupLocalAuth(app: Express) {
   app.use(

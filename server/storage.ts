@@ -96,7 +96,10 @@ export class DatabaseStorage implements IStorage {
   async createContactMessage(message: InsertContactMessage): Promise<ContactMessage> {
     const [newMessage] = await db
       .insert(contactMessages)
-      .values(message)
+      .values({
+        ...message,
+        subject: message.subject || null,
+      })
       .returning();
     return newMessage;
   }

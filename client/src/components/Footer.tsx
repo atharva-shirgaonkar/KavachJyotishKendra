@@ -93,7 +93,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/admin" className="hover:text-white transition-colors">
+                <Link href="/admin_login" className="hover:text-white transition-colors">
                   {t('footer.admin')}
                 </Link>
               </li>
