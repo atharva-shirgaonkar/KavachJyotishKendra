@@ -17,8 +17,8 @@ COPY . .
 ENV PORT=8080
 EXPOSE 8080
 
-# Build the app
-RUN npm run build
+# Build the server TypeScript files
+RUN npm run build:server
 
 # Start the app
 CMD ["npm", "start"]
