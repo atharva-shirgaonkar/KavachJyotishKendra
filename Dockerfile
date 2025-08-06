@@ -17,5 +17,8 @@ COPY . .
 ENV PORT=8080
 EXPOSE 8080
 
+# Build the app
+RUN npm run build
+
 # Start the app
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
