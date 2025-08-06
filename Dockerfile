@@ -1,30 +1,21 @@
-# Use Node.js 18
-FROM node:18-slim
+# Use official Node.js image
+FROM node:18
 
 # Set working directory
 WORKDIR /app
 
-# Copy package files
+# Copy only package.json and package-lock.json first (for caching)
 COPY package*.json ./
 
-# Install all dependencies
-RUN npm ci
+# Install dependencies
+RUN npm install
 
-# Copy source code
+# Now copy the rest of the app
 COPY . .
 
-# Build the client first
-RUN npm run build:client
-
-# Build the server
-RUN npm run build:server
-
-# Expose port
+# Set environment variable and expose port
+ENV PORT=8080
 EXPOSE 8080
 
-# Set environment variables
-ENV NODE_ENV=production
-ENV PORT=8080
-
-# Start the application
-CMD ["npm", "start"] 
+# Start the app
+CMD ["node", "index.js"]
